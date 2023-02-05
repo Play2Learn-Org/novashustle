@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://nova.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 448.71, 477.83 )
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 128, 128 )
+scale = Vector2( 0.064, 0.064 )
+script = ExtResource( 2 )
+
+[node name="nova" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 500, 500 )
+shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 500, 500 )
+enabled = true
+cast_to = Vector2( 0, 1000 )
+collision_mask = 524800
+collide_with_areas = true
