@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 var tilesize = 64
-var speed = 100
 
 onready var ray = $RayCast2D
 
@@ -11,11 +10,6 @@ var inputs = {
 	'ui_left' : Vector2.LEFT,
 	'ui_right' : Vector2.RIGHT,
 }
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 func _unhandled_input(event):
 	for direction in inputs.keys():
@@ -29,3 +23,8 @@ func move(direction):
 	print(position, direction)
 	if !ray.is_colliding():
 		position += direction
+	else:
+		var collider = ray.get_collider()
+		if collider.is_in_group('movable'):
+			if collider.move(direction):
+				position += direction
