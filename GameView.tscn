@@ -13,6 +13,6 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Wall" parent="." instance=ExtResource( 3 )]
-position = Vector2( 192, 64 )
+position = Vector2( 128, 256 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]

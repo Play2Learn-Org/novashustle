@@ -24,9 +24,8 @@ func _unhandled_input(event):
 
 func move(direction):
 	print("move", direction)
-	var vector_pos = position + Vector2(32, 32) + direction
-	ray.cast_to = vector_pos
-	print(position, vector_pos)
-	print(ray.get_collider())
+	ray.cast_to = direction
+	ray.force_raycast_update()
+	print(position, direction)
 	if !ray.is_colliding():
 		position += direction

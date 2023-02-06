@@ -4,24 +4,23 @@
 [ext_resource path="res://Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 448.71, 477.83 )
+extents = Vector2( 30.1194, 31.4475 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 128, 128 )
-scale = Vector2( 0.064, 0.064 )
 script = ExtResource( 2 )
 
 [node name="nova" type="Sprite" parent="."]
+scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 500, 500 )
+position = Vector2( 32, 32 )
 shape = SubResource( 1 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 500, 500 )
+position = Vector2( 32, 32 )
 enabled = true
-cast_to = Vector2( 0, 1000 )
-collision_mask = 524800
+cast_to = Vector2( 0, 64 )
 collide_with_areas = true
