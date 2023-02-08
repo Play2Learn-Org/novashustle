@@ -1,19 +1,189 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://crate.png" type="Texture" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://wall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Crate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://FloorTarget.tscn" type="PackedScene" id=5]
+[ext_resource path="res://floor.png" type="Texture" id=6]
 [ext_resource path="res://Game.gd" type="Script" id=7]
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="crate" type="Sprite" parent="."]
-visible = false
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="floor2" type="Sprite" parent="Floor"]
+position = Vector2( 128, 128 )
 scale = Vector2( 0.064, 0.064 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor3" type="Sprite" parent="Floor"]
+position = Vector2( 192, 128 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor4" type="Sprite" parent="Floor"]
+position = Vector2( 256, 128 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor5" type="Sprite" parent="Floor"]
+position = Vector2( 320, 128 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor6" type="Sprite" parent="Floor"]
+position = Vector2( 384, 128 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor7" type="Sprite" parent="Floor"]
+position = Vector2( 448, 128 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor8" type="Sprite" parent="Floor"]
+position = Vector2( 128, 192 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor9" type="Sprite" parent="Floor"]
+position = Vector2( 192, 192 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor10" type="Sprite" parent="Floor"]
+position = Vector2( 256, 192 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor11" type="Sprite" parent="Floor"]
+position = Vector2( 320, 192 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor12" type="Sprite" parent="Floor"]
+position = Vector2( 384, 192 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor13" type="Sprite" parent="Floor"]
+position = Vector2( 128, 256 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor14" type="Sprite" parent="Floor"]
+position = Vector2( 192, 256 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor15" type="Sprite" parent="Floor"]
+position = Vector2( 256, 256 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor16" type="Sprite" parent="Floor"]
+position = Vector2( 320, 256 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor17" type="Sprite" parent="Floor"]
+position = Vector2( 384, 256 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor18" type="Sprite" parent="Floor"]
+position = Vector2( 448, 256 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor19" type="Sprite" parent="Floor"]
+position = Vector2( 128, 320 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor20" type="Sprite" parent="Floor"]
+position = Vector2( 192, 320 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor21" type="Sprite" parent="Floor"]
+position = Vector2( 256, 320 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor22" type="Sprite" parent="Floor"]
+position = Vector2( 320, 320 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor23" type="Sprite" parent="Floor"]
+position = Vector2( 384, 320 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor24" type="Sprite" parent="Floor"]
+position = Vector2( 448, 320 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor25" type="Sprite" parent="Floor"]
+position = Vector2( 128, 384 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor26" type="Sprite" parent="Floor"]
+position = Vector2( 192, 384 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor27" type="Sprite" parent="Floor"]
+position = Vector2( 256, 384 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor28" type="Sprite" parent="Floor"]
+position = Vector2( 320, 384 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor29" type="Sprite" parent="Floor"]
+position = Vector2( 384, 384 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="floor30" type="Sprite" parent="Floor"]
+position = Vector2( 448, 384 )
+scale = Vector2( 0.064, 0.064 )
+texture = ExtResource( 6 )
 centered = false
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -110,6 +280,7 @@ dialog_text = "You moved all the boxes and earned a cake!"
 [node name="TargetSpots" type="Node2D" parent="."]
 
 [node name="FloorTarget" parent="TargetSpots" instance=ExtResource( 5 )]
+position = Vector2( 448, 192 )
 
 [node name="Crates" type="Node2D" parent="."]
 
