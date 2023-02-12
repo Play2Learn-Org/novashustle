@@ -2,10 +2,13 @@ extends Node2D
 
 var game_done = false
 
+func _ready():
+	$Menus/AnimationPlayer.play("Headline Appears")
+
 func _process(delta):
 	if !game_done:
-		var spots = $TargetSpots.get_child_count()
-		for i in $TargetSpots.get_children():
+		var spots = $TutorialMap/TargetSpots.get_child_count()
+		for i in $TutorialMap/TargetSpots.get_children():
 			if i.occupied:
 				spots -= 1
 	

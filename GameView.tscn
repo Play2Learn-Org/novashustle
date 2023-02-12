@@ -1,273 +1,405 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
+[ext_resource path="res://MenuButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://wall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Crate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://FloorTarget.tscn" type="PackedScene" id=5]
 [ext_resource path="res://floor.png" type="Texture" id=6]
 [ext_resource path="res://Game.gd" type="Script" id=7]
+[ext_resource path="res://MenuSeparator.tscn" type="PackedScene" id=8]
+[ext_resource path="res://orange-juice-2.0.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=4]
+size = 42
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Headline Appears"
+length = 200.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMenu:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Player:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6.5, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../PlayerIntro:percent_visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 9, 11 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../TutorialMap:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 11.5, 13 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../First Task:percent_visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 13.5, 15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 9 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 24, 24 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 240
+font_data = ExtResource( 9 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="Floor" type="Node2D" parent="."]
+[node name="TutorialMap" type="Node2D" parent="."]
 
-[node name="floor2" type="Sprite" parent="Floor"]
-position = Vector2( 128, 128 )
+[node name="Floor" type="Node2D" parent="TutorialMap"]
+
+[node name="floor2" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 640, 448 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor3" type="Sprite" parent="Floor"]
-position = Vector2( 192, 128 )
+[node name="floor3" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 704, 448 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor4" type="Sprite" parent="Floor"]
-position = Vector2( 256, 128 )
+[node name="floor4" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 768, 448 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor5" type="Sprite" parent="Floor"]
-position = Vector2( 320, 128 )
+[node name="floor5" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 832, 448 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor6" type="Sprite" parent="Floor"]
-position = Vector2( 384, 128 )
+[node name="floor6" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 896, 448 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor7" type="Sprite" parent="Floor"]
-position = Vector2( 448, 128 )
+[node name="floor7" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 960, 448 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor8" type="Sprite" parent="Floor"]
-position = Vector2( 128, 192 )
+[node name="floor8" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 640, 512 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor9" type="Sprite" parent="Floor"]
-position = Vector2( 192, 192 )
+[node name="floor9" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 704, 512 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor10" type="Sprite" parent="Floor"]
-position = Vector2( 256, 192 )
+[node name="floor10" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 768, 512 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor11" type="Sprite" parent="Floor"]
-position = Vector2( 320, 192 )
+[node name="floor11" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 832, 512 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor12" type="Sprite" parent="Floor"]
-position = Vector2( 384, 192 )
+[node name="floor12" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 896, 512 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor13" type="Sprite" parent="Floor"]
-position = Vector2( 128, 256 )
+[node name="floor13" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 640, 576 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor14" type="Sprite" parent="Floor"]
-position = Vector2( 192, 256 )
+[node name="floor14" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 704, 576 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor15" type="Sprite" parent="Floor"]
-position = Vector2( 256, 256 )
+[node name="floor15" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 768, 576 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor16" type="Sprite" parent="Floor"]
-position = Vector2( 320, 256 )
+[node name="floor16" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 832, 576 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor17" type="Sprite" parent="Floor"]
-position = Vector2( 384, 256 )
+[node name="floor17" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 896, 576 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor18" type="Sprite" parent="Floor"]
-position = Vector2( 448, 256 )
+[node name="floor18" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 960, 576 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor19" type="Sprite" parent="Floor"]
-position = Vector2( 128, 320 )
+[node name="floor19" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 640, 640 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor20" type="Sprite" parent="Floor"]
-position = Vector2( 192, 320 )
+[node name="floor20" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 704, 640 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor21" type="Sprite" parent="Floor"]
-position = Vector2( 256, 320 )
+[node name="floor21" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 768, 640 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor22" type="Sprite" parent="Floor"]
-position = Vector2( 320, 320 )
+[node name="floor22" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 832, 640 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor23" type="Sprite" parent="Floor"]
-position = Vector2( 384, 320 )
+[node name="floor23" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 896, 640 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor24" type="Sprite" parent="Floor"]
-position = Vector2( 448, 320 )
+[node name="floor24" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 960, 640 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor25" type="Sprite" parent="Floor"]
-position = Vector2( 128, 384 )
+[node name="floor25" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 640, 704 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor26" type="Sprite" parent="Floor"]
-position = Vector2( 192, 384 )
+[node name="floor26" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 704, 704 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor27" type="Sprite" parent="Floor"]
-position = Vector2( 256, 384 )
+[node name="floor27" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 768, 704 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor28" type="Sprite" parent="Floor"]
-position = Vector2( 320, 384 )
+[node name="floor28" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 832, 704 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor29" type="Sprite" parent="Floor"]
-position = Vector2( 384, 384 )
+[node name="floor29" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 896, 704 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="floor30" type="Sprite" parent="Floor"]
-position = Vector2( 448, 384 )
+[node name="floor30" type="Sprite" parent="TutorialMap/Floor"]
+position = Vector2( 960, 704 )
 scale = Vector2( 0.064, 0.064 )
 texture = ExtResource( 6 )
 centered = false
+
+[node name="WallG" type="Node2D" parent="TutorialMap"]
+
+[node name="Wall" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 576, 384 )
+
+[node name="Wall2" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 640, 384 )
+
+[node name="Wall3" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 704, 384 )
+
+[node name="Wall4" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 768, 384 )
+
+[node name="Wall5" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 832, 384 )
+
+[node name="Wall6" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 896, 384 )
+
+[node name="Wall7" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 960, 384 )
+
+[node name="Wall8" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 1024, 384 )
+
+[node name="Wall9" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 1024, 448 )
+
+[node name="Wall10" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 1024, 512 )
+
+[node name="Wall11" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 1024, 576 )
+
+[node name="Wall12" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 1024, 640 )
+
+[node name="Wall13" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 1024, 704 )
+
+[node name="Wall14" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 1024, 768 )
+
+[node name="Wall15" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 960, 768 )
+
+[node name="Wall16" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 896, 768 )
+
+[node name="Wall17" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 832, 768 )
+
+[node name="Wall18" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 768, 768 )
+
+[node name="Wall19" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 704, 768 )
+
+[node name="Wall20" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 640, 768 )
+
+[node name="Wall21" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 576, 768 )
+
+[node name="Wall22" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 576, 704 )
+
+[node name="Wall23" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 576, 640 )
+
+[node name="Wall24" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 576, 576 )
+
+[node name="Wall25" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 576, 512 )
+
+[node name="Wall26" parent="TutorialMap/WallG" instance=ExtResource( 3 )]
+position = Vector2( 576, 448 )
+
+[node name="TargetSpots" type="Node2D" parent="TutorialMap"]
+
+[node name="FloorTarget" parent="TutorialMap/TargetSpots" instance=ExtResource( 5 )]
+position = Vector2( 960, 512 )
+
+[node name="Crates" type="Node2D" parent="TutorialMap"]
+
+[node name="Crate" parent="TutorialMap/Crates" groups=[
+"tomove",
+] instance=ExtResource( 4 )]
+position = Vector2( 832, 576 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 192, 256 )
+position = Vector2( 704, 576 )
 
-[node name="Wallgroup" type="Node" parent="."]
+[node name="PlayerIntro" type="Label" parent="."]
+margin_left = 576.0
+margin_top = 848.0
+margin_right = 1624.0
+margin_bottom = 937.0
+custom_fonts/font = SubResource( 4 )
+text = "You are Nova, a hard working employee of a very important, currently unnamed Company."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Wall" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 64, 64 )
-
-[node name="Wall2" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 128, 64 )
-
-[node name="Wall3" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 192, 64 )
-
-[node name="Wall4" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 256, 64 )
-
-[node name="Wall5" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 320, 64 )
-
-[node name="Wall6" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 384, 64 )
-
-[node name="Wall7" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 448, 64 )
-
-[node name="Wall8" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 512, 64 )
-
-[node name="Wall9" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 512, 128 )
-
-[node name="Wall10" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 512, 192 )
-
-[node name="Wall11" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 512, 256 )
-
-[node name="Wall12" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 512, 320 )
-
-[node name="Wall13" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 512, 384 )
-
-[node name="Wall14" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 512, 448 )
-
-[node name="Wall15" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 448, 448 )
-
-[node name="Wall16" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 384, 448 )
-
-[node name="Wall17" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 320, 448 )
-
-[node name="Wall18" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 256, 448 )
-
-[node name="Wall19" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 192, 448 )
-
-[node name="Wall20" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 128, 448 )
-
-[node name="Wall21" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 64, 448 )
-
-[node name="Wall22" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 64, 384 )
-
-[node name="Wall23" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 64, 320 )
-
-[node name="Wall24" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 64, 256 )
-
-[node name="Wall25" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 64, 192 )
-
-[node name="Wall26" parent="Wallgroup" instance=ExtResource( 3 )]
-position = Vector2( 64, 128 )
+[node name="First Task" type="Label" parent="."]
+margin_left = 576.0
+margin_top = 952.0
+margin_right = 1288.0
+margin_bottom = 1008.0
+custom_fonts/font = SubResource( 4 )
+text = "Move around with the arrow keys."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 margin_left = 96.0
@@ -277,14 +409,84 @@ margin_bottom = 480.0
 window_title = "Won!"
 dialog_text = "You moved all the boxes and earned a cake!"
 
-[node name="TargetSpots" type="Node2D" parent="."]
+[node name="Menus" type="Node2D" parent="."]
 
-[node name="FloorTarget" parent="TargetSpots" instance=ExtResource( 5 )]
-position = Vector2( 448, 192 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Menus"]
+method_call_mode = 1
+"anims/Headline Appears" = SubResource( 2 )
 
-[node name="Crates" type="Node2D" parent="."]
+[node name="MainMenu" type="VBoxContainer" parent="Menus"]
+margin_left = 192.0
+margin_top = 904.0
+margin_right = 512.0
+margin_bottom = 1200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Crate" parent="Crates" groups=[
-"tomove",
-] instance=ExtResource( 4 )]
-position = Vector2( 320, 256 )
+[node name="CenterContainer" type="CenterContainer" parent="Menus/MainMenu"]
+margin_right = 320.0
+margin_bottom = 51.0
+
+[node name="Label" type="Label" parent="Menus/MainMenu/CenterContainer"]
+margin_left = 106.0
+margin_right = 214.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Menu"
+
+[node name="HSeparator2" parent="Menus/MainMenu" instance=ExtResource( 8 )]
+modulate = Color( 1, 1, 1, 1 )
+margin_top = 55.0
+margin_bottom = 59.0
+
+[node name="HSeparator3" parent="Menus/MainMenu" instance=ExtResource( 8 )]
+margin_top = 63.0
+margin_bottom = 67.0
+
+[node name="StartBtn" parent="Menus/MainMenu" instance=ExtResource( 1 )]
+margin_top = 71.0
+margin_bottom = 117.0
+text = "Start"
+
+[node name="HSeparator" parent="Menus/MainMenu" instance=ExtResource( 8 )]
+margin_top = 121.0
+margin_bottom = 125.0
+
+[node name="OptionsBtn" parent="Menus/MainMenu" instance=ExtResource( 1 )]
+visible = false
+margin_top = 129.0
+margin_bottom = 175.0
+text = "Options"
+
+[node name="MenuSep2" parent="Menus/MainMenu" instance=ExtResource( 8 )]
+visible = false
+margin_top = 58.0
+margin_bottom = 62.0
+
+[node name="MenuButton" parent="Menus/MainMenu" instance=ExtResource( 1 )]
+margin_top = 129.0
+margin_bottom = 175.0
+
+[node name="BoxInfoSignaler" type="Area2D" parent="Menus/MainMenu"]
+position = Vector2( 0, -312 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Menus/MainMenu/BoxInfoSignaler"]
+position = Vector2( 672, 16 )
+shape = SubResource( 5 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Menus"]
+margin_top = 64.0
+margin_right = 2000.0
+margin_bottom = 384.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menus/CenterContainer"]
+margin_left = 305.0
+margin_top = 40.0
+margin_right = 1694.0
+margin_bottom = 280.0
+custom_fonts/font = SubResource( 1 )
+text = "Nova's Hustle"
