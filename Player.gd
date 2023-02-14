@@ -20,11 +20,16 @@ func move(direction):
 	print("move", direction)
 	ray.cast_to = direction
 	ray.force_raycast_update()
-	print(position, direction)
-	if !ray.is_colliding():
-		position += direction
-	else:
+	print("get node", get_tree().get_root().get_node('TutorialsTexts'))
+	# return on branches when the player object shouldn't move
+	if ray.is_colliding():
 		var collider = ray.get_collider()
+		print("collided with", collider)
 		if collider.is_in_group('movable'):
-			if collider.move(direction):
-				position += direction
+			if !collider.move(direction):
+				return
+		elif collider.is_in_group('notification'):
+			print("here")
+			#$TutorialTexts/CreateInfoNode/CratePlayer.play('CreateTextAppear')
+			collider.set_deferred("monitoring", false)
+	position += direction
