@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "CrateInfoNode",
+"language": "GDScript",
+"path": "res://CrateInfoNode.gd"
+} ]
 _global_script_class_icons={
-
+"CrateInfoNode": ""
 }
 
 [application]
@@ -18,6 +23,10 @@ _global_script_class_icons={
 config/name="Novas Hustle"
 run/main_scene="res://GameView.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GameEvents="*res://GameEvents.gd"
 
 [display]
 

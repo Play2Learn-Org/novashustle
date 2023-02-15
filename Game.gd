@@ -5,7 +5,7 @@ var game_done = false
 func _ready():
 	$Menus/AnimationPlayer.play("Headline Appears")
 
-func _process(delta):
+func _process(_delta):
 	if !game_done:
 		var spots = $TutorialMap/TargetSpots.get_child_count()
 		for i in $TutorialMap/TargetSpots.get_children():
