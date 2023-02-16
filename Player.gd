@@ -29,7 +29,7 @@ func move(direction):
 			if !collider.move(direction):
 				return
 		elif collider.is_in_group('notification'):
-			print("send event info_discovered with topic: ", collider.get("topic"))
-			GameEvents.emit_signal("info_discovered", collider.get("topic"))
+			print("send event info_discovered with topic and name: ", collider.get("topic"), collider.name)
+			GameEvents.emit_signal("info_discovered", collider.name)
 			collider.set_deferred("monitoring", false)
 	position += direction
