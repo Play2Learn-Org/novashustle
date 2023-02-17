@@ -134,6 +134,7 @@ margin_bottom = 329.0
 custom_fonts/font = SubResource( 1 )
 text = "You are Nova, a hard working employee of a very important, currently unnamed Company."
 autowrap = true
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -146,6 +147,7 @@ margin_bottom = 400.0
 custom_fonts/font = SubResource( 1 )
 text = "Move around with the arrow keys."
 autowrap = true
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -171,6 +173,7 @@ custom_fonts/font = SubResource( 3 )
 text = "You discovered crates. By pushing against them, you can move them around.
 Makes me wonder what the other floor tile with the yellow borders is..."
 autowrap = true
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -179,6 +182,7 @@ __meta__ = {
 anims/CrateTextAppear = SubResource( 4 )
 
 [node name="TutorialMap" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="Floor" type="Node2D" parent="TutorialMap"]
 
@@ -449,6 +453,7 @@ position = Vector2( 960, 512 )
 position = Vector2( 832, 576 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 704, 576 )
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
@@ -466,6 +471,7 @@ method_call_mode = 1
 "anims/Headline Appears" = SubResource( 5 )
 
 [node name="MainMenu" type="VBoxContainer" parent="Menus"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 192.0
 margin_top = 904.0
 margin_right = 512.0
@@ -514,7 +520,7 @@ visible = false
 margin_top = 58.0
 margin_bottom = 62.0
 
-[node name="MenuButton" parent="Menus/MainMenu" instance=ExtResource( 1 )]
+[node name="QuitBtn" parent="Menus/MainMenu" instance=ExtResource( 1 )]
 margin_top = 129.0
 margin_bottom = 175.0
 
@@ -533,3 +539,4 @@ margin_right = 1694.0
 margin_bottom = 280.0
 custom_fonts/font = SubResource( 7 )
 text = "Nova's Hustle"
+percent_visible = 0.0

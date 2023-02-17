@@ -17,4 +17,11 @@ func _ready():
 
 
 func _on_MenuButton_pressed():
-	get_tree().quit()
+	print("button with name '", self.name, "' got clicked.")
+	if self.name == "QuitBtn":
+		get_tree().quit()
+		return
+	if self.name == "StartBtn":
+		get_tree().reload_current_scene()
+	else:
+		assert(false, "An action should have happened when clicking the button")
