@@ -12,7 +12,6 @@ func pauseunpause():
 func _unhandled_input(event):
 	if event.is_action_pressed("pause"):
 		pauseunpause()
-		print("is paused:", is_paused)
 
 
 # Called when the node enters the scene tree for the first time.

@@ -17,7 +17,6 @@ func _ready():
 
 
 func _on_MenuButton_pressed():
-	print("button with name '", self.name, "' got clicked.")
 	if self.name == "QuitBtn":
 		get_tree().quit()
 		return

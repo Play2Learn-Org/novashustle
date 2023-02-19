@@ -16,7 +16,7 @@ size = 42
 font_data = ExtResource( 9 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 24, 24 )
+extents = Vector2( 24, 224 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 36
@@ -123,66 +123,7 @@ font_data = ExtResource( 9 )
 [node name="Game" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="TutorialTexts" type="Node2D" parent="."]
-position = Vector2( 864, 608 )
-
-[node name="PlayerIntro" type="Label" parent="TutorialTexts"]
-margin_left = -288.0
-margin_top = 240.0
-margin_right = 760.0
-margin_bottom = 329.0
-custom_fonts/font = SubResource( 1 )
-text = "You are Nova, a hard working employee of a very important, currently unnamed Company."
-autowrap = true
-percent_visible = 0.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="First Task" type="Label" parent="TutorialTexts"]
-margin_left = -288.0
-margin_top = 344.0
-margin_right = 424.0
-margin_bottom = 400.0
-custom_fonts/font = SubResource( 1 )
-text = "Move around with the arrow keys."
-autowrap = true
-percent_visible = 0.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CrateInfoNode" type="Node2D" parent="TutorialTexts"]
-script = ExtResource( 10 )
-
-[node name="CrateInfoSignaler" type="Area2D" parent="TutorialTexts/CrateInfoNode" groups=[
-"notification",
-]]
-position = Vector2( -672, -16 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialTexts/CrateInfoNode/CrateInfoSignaler"]
-position = Vector2( 672, 16 )
-shape = SubResource( 2 )
-
-[node name="CrateLabel" type="Label" parent="TutorialTexts/CrateInfoNode"]
-margin_left = 232.0
-margin_top = -32.0
-margin_right = 880.0
-margin_bottom = 180.0
-custom_fonts/font = SubResource( 3 )
-text = "You discovered crates. By pushing against them, you can move them around.
-Makes me wonder what the other floor tile with the yellow borders is..."
-autowrap = true
-percent_visible = 0.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CratePlayer" type="AnimationPlayer" parent="TutorialTexts/CrateInfoNode"]
-anims/CrateTextAppear = SubResource( 4 )
-
 [node name="TutorialMap" type="Node2D" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 
 [node name="Floor" type="Node2D" parent="TutorialMap"]
 
@@ -450,10 +391,65 @@ position = Vector2( 960, 512 )
 [node name="Crate" parent="TutorialMap/Crates" groups=[
 "tomove",
 ] instance=ExtResource( 4 )]
-position = Vector2( 832, 576 )
+position = Vector2( 896, 576 )
+
+[node name="TutorialTexts" type="Node2D" parent="."]
+position = Vector2( 864, 608 )
+
+[node name="PlayerIntro" type="Label" parent="TutorialTexts"]
+margin_left = -288.0
+margin_top = 240.0
+margin_right = 760.0
+margin_bottom = 329.0
+custom_fonts/font = SubResource( 1 )
+text = "You are Nova, a hard working employee of a very important, currently unnamed Company."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="First Task" type="Label" parent="TutorialTexts"]
+margin_left = -288.0
+margin_top = 344.0
+margin_right = 424.0
+margin_bottom = 400.0
+custom_fonts/font = SubResource( 1 )
+text = "Move around with the arrow keys."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CrateInfoNode" type="Node2D" parent="TutorialTexts"]
+script = ExtResource( 10 )
+
+[node name="CrateInfoSignaler" type="Area2D" parent="TutorialTexts/CrateInfoNode" groups=[
+"notification",
+]]
+position = Vector2( -672, -16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialTexts/CrateInfoNode/CrateInfoSignaler"]
+position = Vector2( 608, 16 )
+shape = SubResource( 2 )
+
+[node name="CrateLabel" type="Label" parent="TutorialTexts/CrateInfoNode"]
+margin_left = 232.0
+margin_top = -32.0
+margin_right = 880.0
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 3 )
+text = "You discovered crates. By pushing against them, you can move them around.
+Makes me wonder what the other floor tile with the yellow borders is..."
+autowrap = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CratePlayer" type="AnimationPlayer" parent="TutorialTexts/CrateInfoNode"]
+anims/CrateTextAppear = SubResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 704, 576 )
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
@@ -471,7 +467,6 @@ method_call_mode = 1
 "anims/Headline Appears" = SubResource( 5 )
 
 [node name="MainMenu" type="VBoxContainer" parent="Menus"]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 192.0
 margin_top = 904.0
 margin_right = 512.0
@@ -539,4 +534,3 @@ margin_right = 1694.0
 margin_bottom = 280.0
 custom_fonts/font = SubResource( 7 )
 text = "Nova's Hustle"
-percent_visible = 0.0
